@@ -6,9 +6,7 @@ public class ExecutorsFramework {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
 
-        executorService.execute(()->{
-            System.out.println("Using runnable");
-        });
+        executorService.execute(() -> System.out.println("Using runnable"));
         Future<?> submit1 = executorService.submit(() -> {
             String name = Thread.currentThread().getName();
             System.out.println("Current Thread : " + name);
