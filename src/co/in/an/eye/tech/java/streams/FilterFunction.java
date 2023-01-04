@@ -16,7 +16,7 @@ public class FilterFunction {
         HashSet unique = new HashSet();
         Arrays.stream(arr).filter(i->unique.add(i)).forEach(i->System.out.print(i+" "));
 
-        System.out.println("\nNumber divisible by 2 (Even number) from given streams :");
+        System.out.println("\n\nNumber divisible by 2 (Even number) from given streams :");
         Stream.of(2, 2, 4, 3, 5, 134, 53, 53, 13541, 413, 234, 23413, 234, 0)
                 .filter(i -> i % 2 == 0)
                 /* .map(i -> {
