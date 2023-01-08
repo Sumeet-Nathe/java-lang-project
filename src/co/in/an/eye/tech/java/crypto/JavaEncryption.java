@@ -20,15 +20,15 @@ public class JavaEncryption {
         SecretKeySpec keySpec = getKey(key);
         Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
         try {
-            cipher.init(Cipher.ENCRYPT_MODE,keySpec,spec);
-            byte [] sumeet = cipher.doFinal("Sumeet_M_Nathe".getBytes());
-            System.out.println("Encrypted Value : "+new String(sumeet));
+            cipher.init(Cipher.ENCRYPT_MODE, keySpec, spec);
+            byte[] sumeet = cipher.doFinal("Sumeet_M_Nathe".getBytes());
+            System.out.println("Encrypted Value : " + new String(sumeet));
 
             Cipher cipher1 = Cipher.getInstance("AES/CBC/PKCS5Padding");
-            cipher1.init(Cipher.DECRYPT_MODE,keySpec,new IvParameterSpec(spec.getIV()));
+            cipher1.init(Cipher.DECRYPT_MODE, keySpec, new IvParameterSpec(spec.getIV()));
 
-            byte [] originalVal = cipher1.doFinal(sumeet);
-            System.out.println("Original Val : "+new String(originalVal));
+            byte[] originalVal = cipher1.doFinal(sumeet);
+            System.out.println("Original Val : " + new String(originalVal));
 
         } catch (InvalidKeyException | InvalidAlgorithmParameterException | BadPaddingException |
                  IllegalBlockSizeException e) {
@@ -38,7 +38,7 @@ public class JavaEncryption {
 
 
     private static IvParameterSpec getIvSecureRandom(String algorithm) throws NoSuchAlgorithmException, NoSuchPaddingException {
-        SecureRandom random =  SecureRandom.getInstanceStrong();
+        SecureRandom random = SecureRandom.getInstanceStrong();
         byte[] iv = new byte[Cipher.getInstance(algorithm).getBlockSize()];
         random.nextBytes(iv);
         return new IvParameterSpec(iv);
@@ -46,12 +46,12 @@ public class JavaEncryption {
 
     private static SecretKeySpec getKey(String key) {
         int keyLength = 256;
-        byte [] keyBytes = new byte[keyLength / 8];
-        Arrays.fill(keyBytes,(byte)0x0);
+        byte[] keyBytes = new byte[keyLength / 8];
+        Arrays.fill(keyBytes, (byte) 0x0);
         byte[] passwordBytes = key.getBytes(StandardCharsets.UTF_8);
-        int length = Math.min(passwordBytes.length,keyBytes.length);
-        System.arraycopy(passwordBytes,0,keyBytes,0,length);
-        SecretKeySpec keySpec = new SecretKeySpec(keyBytes,"AES");
+        int length = Math.min(passwordBytes.length, keyBytes.length);
+        System.arraycopy(passwordBytes, 0, keyBytes, 0, length);
+        SecretKeySpec keySpec = new SecretKeySpec(keyBytes, "AES");
         return keySpec;
     }
 }

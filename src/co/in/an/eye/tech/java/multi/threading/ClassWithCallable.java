@@ -10,19 +10,19 @@ public class ClassWithCallable implements Callable<String> {
         this.message = message;
     }
 
-    @Override
-    public String call() throws Exception {
-        return "Hi "+message;
-    }
-
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ClassWithCallable c = new ClassWithCallable("Sumeet");
         ExecutorService executorService = Executors.newSingleThreadExecutor();
         Future<String> future = executorService.submit(c);
         System.out.println(future.get());
-        executorService.submit(()-> System.out.println("From Runnable : Hi Sumeet"));
+        executorService.submit(() -> System.out.println("From Runnable : Hi Sumeet"));
 
         executorService.shutdown();
         //executorService.submit(()-> System.out.println("Hi"));
+    }
+
+    @Override
+    public String call() throws Exception {
+        return "Hi " + message;
     }
 }

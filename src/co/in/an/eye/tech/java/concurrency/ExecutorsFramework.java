@@ -13,16 +13,16 @@ public class ExecutorsFramework {
             return "String";
 
         });
-        System.out.println("Using Callable : submit : "+submit1.get());
+        System.out.println("Using Callable : submit : " + submit1.get());
 
         ExecutorService ex = Executors.newFixedThreadPool(3);
-        Future<String> name = ex.submit(()-> Thread.currentThread().getName());
-        ex.execute(()-> System.out.println("Runnable using execute : "+Thread.currentThread().getName()));
-        System.out.println("Future Current thread : "+name.get());
+        Future<String> name = ex.submit(() -> Thread.currentThread().getName());
+        ex.execute(() -> System.out.println("Runnable using execute : " + Thread.currentThread().getName()));
+        System.out.println("Future Current thread : " + name.get());
 
-        Callable<String> call = ()-> "new Thread using callable!";
+        Callable<String> call = () -> "new Thread using callable!";
         Future<String> submit = ex.submit(call);
-        System.out.println("Return type by callable -> future ->submit : "+submit.get());
+        System.out.println("Return type by callable -> future ->submit : " + submit.get());
         ExecutorService scheduledExecService = Executors.newScheduledThreadPool(1);
     }
 }

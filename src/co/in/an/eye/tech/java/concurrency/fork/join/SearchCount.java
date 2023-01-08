@@ -27,7 +27,7 @@ public class SearchCount extends RecursiveTask<Integer> {
         for (int i : a
         ) {
             if (element == i) {
-                System.out.println("Array index Postions : "+pos);
+                System.out.println("Array index Postions : " + pos);
                 count++;
             }
             pos++;
