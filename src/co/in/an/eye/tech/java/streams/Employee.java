@@ -1,5 +1,7 @@
 package co.in.an.eye.tech.java.streams;
 
+import java.util.Objects;
+
 public class Employee {
     String name;
     Integer empId;
@@ -23,6 +25,19 @@ public class Employee {
 
     public void setEmpId(Integer empId) {
         this.empId = empId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(name, employee.name) && Objects.equals(empId, employee.empId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, empId);
     }
 
     @Override
