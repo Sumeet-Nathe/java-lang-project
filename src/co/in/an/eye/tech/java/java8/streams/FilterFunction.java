@@ -16,6 +16,10 @@ public class FilterFunction {
         HashSet unique = new HashSet();
         Arrays.stream(arr).filter(i -> unique.add(i)).forEach(i -> System.out.print(i + " "));
 
+        Integer intArray[] = {10, 15, 8, 49, 25, 98, 98, 32, 15};
+
+        Stream.of(intArray).forEach(System.out::println);
+
         System.out.println("\n\nNumber divisible by 2 (Even number) from given streams :");
         Stream.of(2, 2, 4, 3, 5, 134, 53, 53, 13541, 413, 234, 23413, 234, 0)
                 .filter(i -> i % 2 == 0)
