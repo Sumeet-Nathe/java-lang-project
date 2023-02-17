@@ -1,6 +1,7 @@
 package co.in.an.eye.tech.java.java8.streams;
 
 import java.util.IntSummaryStatistics;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -21,5 +22,9 @@ public class CollectorsForCountingOccurrences {
 
         Integer mapToInt = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9).mapToInt(Integer::intValue).sum();
         System.out.println("Sum of given array using mapToInt : " + mapToInt);
+
+        List<Employee> employees = Employee.getEmployee();
+        Map<String, Long> sumeet = employees.stream().collect(Collectors.groupingBy(employee -> employee.name.equals("Sumeet") ? employee.getName() : "Others", Collectors.counting()));
+        System.out.println(sumeet);
     }
 }
