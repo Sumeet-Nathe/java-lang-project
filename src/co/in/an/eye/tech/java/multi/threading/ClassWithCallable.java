@@ -22,7 +22,7 @@ public class ClassWithCallable implements Callable<String> {
     }
 
     @Override
-    public String call() throws Exception {
+    public String call() {
         return "Hi " + message;
     }
 }

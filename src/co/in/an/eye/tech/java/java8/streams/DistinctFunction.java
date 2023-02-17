@@ -1,6 +1,7 @@
 package co.in.an.eye.tech.java.java8.streams;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class DistinctFunction {
@@ -23,8 +24,15 @@ public class DistinctFunction {
 
         Student s1 = new Student(9, "Sumeet");
         Student s2 = new Student(9, "Sumeet");
+
         students.add(s1);
         students.add(s2);
+
+        HashMap<Student,Integer> hashMap = new HashMap<>();
+        hashMap.put(s1,2);
+        hashMap.put(s2,3);
+
+        System.out.println("s1 :"+hashMap.get(s1));
 
         //As we have implemented equals and hashcode in Employee class
         //Above statements doesn't matter because those will be pointing to

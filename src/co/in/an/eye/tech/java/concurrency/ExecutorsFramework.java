@@ -10,7 +10,7 @@ public class ExecutorsFramework {
         Future<?> submit1 = executorService.submit(() -> {
             String name = Thread.currentThread().getName();
             System.out.println("Current Thread : " + name);
-            return "String";
+            return name;
 
         });
         System.out.println("Using Callable : submit : " + submit1.get());
