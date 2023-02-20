@@ -24,7 +24,7 @@ public class CollectorsForCountingOccurrences {
         System.out.println("Sum of given array using mapToInt : " + mapToInt);
 
         List<Employee> employees = Employee.getEmployee();
-        Map<String, Long> sumeet = employees.stream().collect(Collectors.groupingBy(employee -> employee.name.equals("Sumeet") ? employee.getName() : "Others", Collectors.counting()));
-        System.out.println(sumeet);
+        Map<String, Long> employeeWithItsCount = employees.stream().collect(Collectors.groupingBy(employee -> employee.name, Collectors.counting()));
+        System.out.println(employeeWithItsCount);
     }
 }
