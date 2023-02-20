@@ -9,8 +9,8 @@ public class SortingFunction {
         System.out.println("Sorting of given Integer stream");
         Stream.of(1, 1, 1, 2, 3, 4, 5, 3, 2).sorted().forEach(i -> System.out.print(i + " "));
 
-        System.out.println("\n\nReverse Sorting of given Integer stream");
-        Stream.of(1, 1, 1, 2, 3, 4, 5, 3, 2).sorted(Comparator.reverseOrder()).forEach(i -> System.out.print(i + " "));
+        System.out.println("\n\nReverse Sorting of given Integer stream with max limit 3");
+        Stream.of(1, 1, 1, 2, 3, 4, 5, 3, 2).sorted(Comparator.reverseOrder()).limit(3).forEach(i -> System.out.print(i + " "));
 
         System.out.println("\n\nSorting based on name :");
         Employee.getEmployee().stream().sorted(Comparator.comparing(Employee::getName)).forEach(System.out::print);
