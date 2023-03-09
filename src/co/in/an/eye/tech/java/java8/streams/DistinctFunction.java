@@ -32,7 +32,8 @@ public class DistinctFunction {
         hashMap.put(s1,2);
         hashMap.put(s2,3);
 
-        System.out.println("s1 :"+hashMap.get(s1));
+        System.out.println("s1 :" + hashMap.get(s1));
+        System.out.println("s2 :" + hashMap.get(s2));
 
         //As we have implemented equals and hashcode in Employee class
         //Above statements doesn't matter because those will be pointing to
