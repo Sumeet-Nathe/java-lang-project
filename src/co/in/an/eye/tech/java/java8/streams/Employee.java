@@ -69,7 +69,7 @@ public class Employee {
         employees.add(new Employee("Mai", 101, Arrays.asList(new Salary(200000D))));
         employees.add(new Employee("Appa", 102, Arrays.asList(new Salary(300000D))));
         employees.add(new Employee("Snehal", 104, Arrays.asList(new Salary(400000D))));
-        employees.add(new Employee("Sumeet", 99, Arrays.asList(new Salary(990000D))));
+        employees.add(new Employee("Sumeet", 99, Arrays.asList(new Salary(990000D), new Salary(990000D), new Salary(990000D))));
         return employees;
     }
 }

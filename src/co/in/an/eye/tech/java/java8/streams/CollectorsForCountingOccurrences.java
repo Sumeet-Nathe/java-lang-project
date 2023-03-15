@@ -30,6 +30,6 @@ public class CollectorsForCountingOccurrences {
 
         List<Employee> employees = Employee.getEmployee();
         Map<String, Long> employeeWithItsCount = employees.stream().collect(Collectors.groupingBy(employee -> employee.name, Collectors.counting()));
-        System.out.println(employeeWithItsCount);
+        System.out.println("employeeWithItsCount : " + employeeWithItsCount);
     }
 }

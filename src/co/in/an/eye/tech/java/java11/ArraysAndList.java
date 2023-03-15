@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public class ArraysAndList {
     public static void main(String[] args) {
-        List list = Arrays.asList("Sumeet","Manoj","Shobha","Snehal");
+        List<String> list = Arrays.asList("Sumeet", "Manoj", "Shobha", "Snehal");
         System.out.println(list);
 
         String [] stringArray =(String[]) list.toArray(String[]::new);
